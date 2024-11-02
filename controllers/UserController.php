@@ -13,7 +13,7 @@ class UserController
     public function readUser()
     {
         $view = new View();
-        echo $view->render('getUser', 'main');
+        $view->render('getUser', 'main');
 
     }
 }
