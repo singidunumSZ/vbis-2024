@@ -5,16 +5,24 @@
 
     <title></title>
 </head>
+<style>
+    .custom-header{
+        width: 100%;
+        background-color: pink;
+        color: white;
+    }
+
+</style>
 <body>
-<header style = "width : 100%; background-color: pink;color: antiquewhite">
-    header
+<header class = "custom-header">
+header page
 </header>
 <main>
     {{ RENDER_SECTION }}
 </main>
 
 </body>
-<footer>
+<footer class = "custom-header">
     footer page
 </footer>
 

@@ -6,5 +6,7 @@ class UserModel
     public string $firstName;
     public string $lastName;
 
+    public function __construct(){
 
+    }
 }
