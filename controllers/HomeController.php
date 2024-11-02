@@ -6,6 +6,6 @@ class HomeController
 {
     public function home(){
     $view = new View();
-    echo $view->render('home');
+    echo $view->render('home', 'main');
     }
 }
