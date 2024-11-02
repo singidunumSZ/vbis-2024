@@ -17,10 +17,8 @@ class UserController extends BaseController
         $model->lastName ='Zivkovic';
 
 
-        echo "<pre>";
-        var_dump($model);
-        exit;
-        $this->view->render('getUser', 'main');
+
+        $this->view->render('getUser', 'main', $model);
 
     }
 }

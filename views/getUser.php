@@ -1,5 +1,7 @@
 <?php
+
+
 ?>
 
-<h1>Sara Zivkovic</h1>
+<h1><?php echo $params->firstName?> <?php echo $params->lastName?> </h1>
 
