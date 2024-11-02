@@ -9,6 +9,9 @@ class View
         $view = $this->renderPartialView($viewName);
 
 
+        $fullView = str_replace("{{ RENDER_SECTION }}", $view, $layout);
+        return $fullView;
+
         ob_start();
         include_once  __DIR__ . "/../views/$viewName.php";
         return ob_get_clean();
