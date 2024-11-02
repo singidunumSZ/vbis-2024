@@ -1,6 +1,8 @@
 <?php
 namespace app\controllers;
 
+use app\core\View;
+
 class UserController
 {
     public function userCreate()
@@ -10,6 +12,8 @@ class UserController
 
     public function readUser()
     {
-        echo  "Petar Bisevac";
+        $view = new View();
+        echo $view->render('getUser', 'main');
+
     }
 }
