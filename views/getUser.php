@@ -1,5 +1,9 @@
 <?php
 
+/** @var $params UserModel
+ */
+
+use app\models\UserModel;
 
 ?>
 
