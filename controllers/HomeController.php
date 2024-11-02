@@ -2,14 +2,8 @@
 
 namespace app\controllers;
 use app\core\View;
-class HomeController
+class HomeController extends BaseController
 {
-    public View $view;
-
-    public function __construct()
-    {
-        $this->view = new View();
-    }
     public function home(){
 
 

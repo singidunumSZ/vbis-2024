@@ -3,7 +3,7 @@ namespace app\controllers;
 
 use app\core\View;
 
-class UserController
+class UserController extends BaseController
 {
     public function userCreate()
     {
@@ -12,8 +12,8 @@ class UserController
 
     public function readUser()
     {
-        $view = new View();
-        $view->render('getUser', 'main');
+
+        this->view->render('getUser', 'main');
 
     }
 }
