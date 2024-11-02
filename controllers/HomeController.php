@@ -6,7 +6,6 @@ class HomeController extends BaseController
 {
     public function home(){
 
-
     this->$view->render('home', 'main');
     }
     public function about(){
