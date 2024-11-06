@@ -1,15 +1,24 @@
 <?php
 namespace app\controllers;
 
-class UserController
+use app\core\BaseController;
+use app\core\View;
+use app\models\UserModel;
+
+class UserController extends BaseController
 {
-    public function userCreate()
-    {
-        return "User Created";
-    }
+
 
     public function readUser()
     {
-        echo  "Petar Bisevac";
+        $model = new UserModel();
+        $model->email ='sara.zivkovic.22@singimail.rs';
+        $model-> firstName ='Sara';
+        $model->lastName ='Zivkovic';
+
+
+
+        $this->view->render('getUser', 'main', $model);
+
     }
 }
