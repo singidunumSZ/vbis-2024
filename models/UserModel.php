@@ -1,12 +1,12 @@
 <?php
 namespace app\models;
 use app\core\DbConnection;
-
+use app\core\BaseModel;
 class UserModel extends BaseModel
 {
     public string $email;
-    public string $firstName;
-    public string $lastName;
+    public string $first_name;
+    public string $last_name;
 
     public function __construct(){
 

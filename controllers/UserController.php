@@ -1,6 +1,6 @@
 <?php
 namespace app\controllers;
-
+use app\models\ProductModel;
 use app\core\BaseController;
 use app\core\View;
 use app\models\UserModel;
@@ -14,6 +14,7 @@ class UserController extends BaseController
 
         $model = new UserModel();
         $model->get();
+
         $this->view->render('getUser', 'main', $model);
 
     }
