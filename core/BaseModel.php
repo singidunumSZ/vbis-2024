@@ -1,17 +1,11 @@
 <?php
-namespace app\models;
-use app\core\BaseModel;
-use app\core\DbConnection;
 
-class UserModel extends BaseModel
+namespace app\core;
+
+abstract class BaseModel
 {
-    public string $email;
-    public string $firstName;
-    public string $lastName;
+    abstract public function tableName();
 
-    public function __construct(){
-
-    }
     public function get(){
         $db = new DbConnection();
         $con = $db->connect();
@@ -22,10 +16,5 @@ class UserModel extends BaseModel
         $this->email =$user['email'];
         $this-> firstName = $user['first_name'];
         $this->lastName = $user['last_name'];
-    }
-
-    public function tableName()
-    {
-        // TODO: Implement tableName() method.
     }
 }

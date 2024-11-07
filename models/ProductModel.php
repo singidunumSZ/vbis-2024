@@ -2,9 +2,10 @@
 
 namespace app\models;
 
+use app\core\BaseModel;
 use app\core\DbConnection;
 
-class ProductModel
+class ProductModel extends BaseModel
 {
     public string $name;
     public string $description;
@@ -19,5 +20,10 @@ class ProductModel
         $this->name =$products['name'];
         $this-> description = $products['description'];
         $this->price = $products['price'];
+    }
+
+    public function tableName()
+    {
+        // TODO: Implement tableName() method.
     }
 }
