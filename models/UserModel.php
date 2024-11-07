@@ -14,7 +14,8 @@ class UserModel
     public function get(){
         $db = new DbConnection();
         $con = $db->connect();
-        $dbResult = $con->query("select * from users limit 1");
+        $dbResult = $con->query(/** @lang text */ 'select * from users limit 1
+');
         $user = $dbResult->fetch_assoc();
 
         $this->email =$user['email'];
