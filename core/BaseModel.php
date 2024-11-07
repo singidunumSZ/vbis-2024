@@ -22,4 +22,5 @@ abstract class BaseModel
         $this-> firstName = $user['first_name'];
         $this->lastName = $user['last_name'];
     }
+
 }
