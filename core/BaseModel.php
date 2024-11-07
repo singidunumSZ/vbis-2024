@@ -9,7 +9,8 @@ abstract class BaseModel
     public function get(){
         $db = new DbConnection();
         $con = $db->connect();
-        $dbResult = $con->query(/** @lang text */ 'select * from users limit 1
+        $tableName = $this->tableName();
+        $dbResult = $con->query( 'select * from $tableName limit 1
 ');
         $user = $dbResult->fetch_assoc();
 

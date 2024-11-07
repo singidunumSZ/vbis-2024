@@ -1,6 +1,5 @@
 <?php
 namespace app\models;
-use app\core\BaseModel;
 use app\core\DbConnection;
 
 class UserModel extends BaseModel
@@ -12,20 +11,8 @@ class UserModel extends BaseModel
     public function __construct(){
 
     }
-    public function get(){
-        $db = new DbConnection();
-        $con = $db->connect();
-        $dbResult = $con->query(/** @lang text */ 'select * from users limit 1
-');
-        $user = $dbResult->fetch_assoc();
 
-        $this->email =$user['email'];
-        $this-> firstName = $user['first_name'];
-        $this->lastName = $user['last_name'];
-    }
-
-    public function tableName()
-    {
-        // TODO: Implement tableName() method.
+    public function tableName(){
+        return 'users';
     }
 }

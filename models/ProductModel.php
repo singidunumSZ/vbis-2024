@@ -2,7 +2,7 @@
 
 namespace app\models;
 
-use app\core\BaseModel;
+
 use app\core\DbConnection;
 
 class ProductModel extends BaseModel
@@ -24,6 +24,6 @@ class ProductModel extends BaseModel
 
     public function tableName()
     {
-        // TODO: Implement tableName() method.
+       return "products";
     }
 }
