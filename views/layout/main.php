@@ -51,11 +51,14 @@
                             <a href="../pages/about-us.html" class="dropdown-item border-radius-md">
                                 <span>About Us</span>
                             </a>
-                            <a href="/" class="dropdown-item border-radius-md">
+                            <a href="../getUser" class="dropdown-item border-radius-md">
                                 <span>Users</span>
                             </a>
-                            <a href="../pages/author.html" class="dropdown-item border-radius-md">
+                            <a href="../" class="dropdown-item border-radius-md">
                                 <span>Home</span>
+                            </a>
+                            <a href="tggtf" class="dropdown-item border-radius-md">
+                                <span>Products</span>
                             </a>
                             <h6 class="dropdown-header text-dark font-weight-bolder d-flex align-items-center px-1 mt-3">
                                 Account
@@ -87,74 +90,7 @@
 
 
 
-                <li class="nav-item dropdown dropdown-hover mx-2">
-                    <a class="nav-link ps-2 d-flex justify-content-between cursor-pointer align-items-center" id="dropdownMenuDocs" data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="material-symbols-rounded opacity-6 me-2 text-md">article</i>
-                        Docs
-                        <img src="../assets/img/down-arrow-white.svg" alt="down-arrow" class="arrow ms-2 d-lg-block d-none">
-                        <img src="../assets/img/down-arrow-dark.svg" alt="down-arrow" class="arrow ms-2 d-lg-none d-block">
-                    </a>
-                    <ul class="dropdown-menu dropdown-menu-animation dropdown-menu-end dropdown-md dropdown-md-responsive mt-0 mt-lg-3 p-3 border-radius-lg" aria-labelledby="dropdownMenuDocs">
-                        <div class="d-none d-lg-block">
-                            <ul class="list-group">
-                                <li class="nav-item list-group-item border-0 p-0">
-                                    <a class="dropdown-item py-2 ps-3 border-radius-md" href=" https://www.creative-tim.com/learning-lab/bootstrap/overview/material-kit ">
-                                        <h6 class="dropdown-header text-dark font-weight-bolder d-flex justify-content-cente align-items-center p-0">Getting Started</h6>
-                                        <span class="text-sm">All about overview, quick start, license and contents</span>
-                                    </a>
-                                </li>
-                                <li class="nav-item list-group-item border-0 p-0">
-                                    <a class="dropdown-item py-2 ps-3 border-radius-md" href=" https://www.creative-tim.com/learning-lab/bootstrap/colors/material-kit ">
-                                        <h6 class="dropdown-header text-dark font-weight-bolder d-flex justify-content-cente align-items-center p-0">Foundation</h6>
-                                        <span class="text-sm">See our colors, icons and typography</span>
-                                    </a>
-                                </li>
-                                <li class="nav-item list-group-item border-0 p-0">
-                                    <a class="dropdown-item py-2 ps-3 border-radius-md" href=" https://www.creative-tim.com/learning-lab/bootstrap/alerts/material-kit ">
-                                        <h6 class="dropdown-header text-dark font-weight-bolder d-flex justify-content-cente align-items-center p-0">Components</h6>
-                                        <span class="text-sm">Explore our collection of fully designed components</span>
-                                    </a>
-                                </li>
-                                <li class="nav-item list-group-item border-0 p-0">
-                                    <a class="dropdown-item py-2 ps-3 border-radius-md" href=" https://www.creative-tim.com/learning-lab/bootstrap/datepicker/material-kit ">
-                                        <h6 class="dropdown-header text-dark font-weight-bolder d-flex justify-content-cente align-items-center p-0">Plugins</h6>
-                                        <span class="text-sm">Check how you can integrate our plugins</span>
-                                    </a>
-                                </li>
-                                <li class="nav-item list-group-item border-0 p-0">
-                                    <a class="dropdown-item py-2 ps-3 border-radius-md" href=" https://www.creative-tim.com/learning-lab/bootstrap/utilities/material-kit ">
-                                        <h6 class="dropdown-header text-dark font-weight-bolder d-flex justify-content-cente align-items-center p-0">Utility Classes</h6>
-                                        <span class="text-sm">For those who want flexibility, use our utility classes</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="row d-lg-none">
-                            <div class="col-md-12 g-0">
-                                <a class="dropdown-item py-2 ps-3 border-radius-md" href="../pages/about-us.html">
-                                    <h6 class="dropdown-header text-dark font-weight-bolder d-flex justify-content-cente align-items-center p-0">Getting Started</h6>
-                                    <span class="text-sm">All about overview, quick start, license and contents</span>
-                                </a>
-                                <a class="dropdown-item py-2 ps-3 border-radius-md" href="../pages/about-us.html">
-                                    <h6 class="dropdown-header text-dark font-weight-bolder d-flex justify-content-cente align-items-center p-0">Foundation</h6>
-                                    <span class="text-sm">See our colors, icons and typography</span>
-                                </a>
-                                <a class="dropdown-item py-2 ps-3 border-radius-md" href="../pages/about-us.html">
-                                    <h6 class="dropdown-header text-dark font-weight-bolder d-flex justify-content-cente align-items-center p-0">Components</h6>
-                                    <span class="text-sm">Explore our collection of fully designed components</span>
-                                </a>
-                                <a class="dropdown-item py-2 ps-3 border-radius-md" href="../pages/about-us.html">
-                                    <h6 class="dropdown-header text-dark font-weight-bolder d-flex justify-content-cente align-items-center p-0">Plugins</h6>
-                                    <span class="text-sm">Check how you can integrate our plugins</span>
-                                </a>
-                                <a class="dropdown-item py-2 ps-3 border-radius-md" href="../pages/about-us.html">
-                                    <h6 class="dropdown-header text-dark font-weight-bolder d-flex justify-content-cente align-items-center p-0">Utility Classes</h6>
-                                    <span class="text-sm">For those who want flexibility, use our utility classes</span>
-                                </a>
-                            </div>
-                        </div>
-                    </ul>
-                </li>
+
                 <li class="nav-item ms-lg-auto">
                     <a class="nav-link nav-link-icon me-2" href="https://github.com/creativetimofficial/soft-ui-design-system" target="_blank">
                         <i class="fa fa-github me-1"></i>
@@ -248,7 +184,7 @@
 
 
                             <div class="input-group input-group-outline">
-                                <label class="form-label">Email Here...</label>
+                                <label class="form-label">Type here if you have any questions</label>
                                 <input type="text" class="form-control mb-sm-0">
                             </div>
 
