@@ -49,7 +49,7 @@
                                 Landing Pages
                             </h6>
                             <a href="../pages/about-us.html" class="dropdown-item border-radius-md">
-                                <span>About Us</span>
+                                <span>Shopping cart</span>
                             </a>
                             <a href="../users" class="dropdown-item border-radius-md">
                                 <span>Users</span>

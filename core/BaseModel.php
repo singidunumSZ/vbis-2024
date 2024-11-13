@@ -40,14 +40,16 @@ abstract class BaseModel
 
 
         $dbResult = $con->query($query);
-        $results = $dbResult->fetch_all();
 
+        $resultArray = [];
+        while($result = $dbResult->fetch_assoc()){
 
-        return $results;
+            $resultArray[] = $result;
+        }
 
+        return $resultArray;
 
     }
-
 
         public function mapData($data){
         if($data != null){
