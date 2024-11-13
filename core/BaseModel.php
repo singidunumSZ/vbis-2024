@@ -7,12 +7,29 @@ abstract class BaseModel
 
     abstract public function tableName();
 
-    public function get()
+    abstract public function readColumns();
+
+    public function one()
     {
         $db = new DbConnection();
         $con = $db->connect();
         $tableName = $this->tableName();
-        $query = "select * from $tableName limit 1";
+        $columns = $this->readColumns();
+        $query = "select " . implode(', ', $columns) . " from $tableName";
+
+
+        $dbResult = $con->query($query);
+        $result = $dbResult->fetch_assoc();
+        $this->mapData($result);
+    }
+
+    public function all()
+    {
+        $db = new DbConnection();
+        $con = $db->connect();
+        $tableName = $this->tableName();
+        $columns = $this->readColumns();
+        $query = "select " . implode(', ', $columns) . " from $tableName";
 
 
         $dbResult = $con->query($query);

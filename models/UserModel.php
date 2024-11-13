@@ -15,4 +15,9 @@ class UserModel extends BaseModel
     public function tableName(){
         return "users";
     }
+
+    public function readColumns()
+    {
+        return ["first_name", "last_name", "email"];
+    }
 }

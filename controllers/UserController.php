@@ -13,11 +13,9 @@ class UserController extends BaseController
     {
 
         $model = new UserModel();
-        $result = $model->get();
-        $model->mapData($result);
-        echo "<pre>";
-        var_dump($model);
-        exit;
+        $model->one();
+
+
 
         $this->view->render('getUser', 'main', $model);
 
