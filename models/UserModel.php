@@ -13,6 +13,6 @@ class UserModel extends BaseModel
     }
 
     public function tableName(){
-        return 'users';
+        return "users";
     }
 }
