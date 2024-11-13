@@ -51,14 +51,14 @@
                             <a href="../pages/about-us.html" class="dropdown-item border-radius-md">
                                 <span>About Us</span>
                             </a>
-                            <a href="../getUser" class="dropdown-item border-radius-md">
+                            <a href="../users" class="dropdown-item border-radius-md">
                                 <span>Users</span>
                             </a>
                             <a href="../" class="dropdown-item border-radius-md">
                                 <span>Home</span>
                             </a>
-                            <a href="tggtf" class="dropdown-item border-radius-md">
-                                <span>Products</span>
+                            <a href="/getUser" class="dropdown-item border-radius-md">
+                                <span>Your account</span>
                             </a>
                             <h6 class="dropdown-header text-dark font-weight-bolder d-flex align-items-center px-1 mt-3">
                                 Account

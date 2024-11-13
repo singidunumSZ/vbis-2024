@@ -13,11 +13,21 @@ class UserController extends BaseController
     {
 
         $model = new UserModel();
-        $model->one();
-
+        $model->one("where id = 1");
 
 
         $this->view->render('getUser', 'main', $model);
+
+    }
+    public function readAll()
+    {
+
+        $model = new UserModel();
+
+        $results = $model->all("");
+
+
+        $this->view->render('users', 'main', $results);
 
     }
 }

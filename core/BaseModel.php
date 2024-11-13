@@ -9,31 +9,43 @@ abstract class BaseModel
 
     abstract public function readColumns();
 
-    public function one()
+    public function one($where)
     {
         $db = new DbConnection();
         $con = $db->connect();
         $tableName = $this->tableName();
         $columns = $this->readColumns();
-        $query = "select " . implode(', ', $columns) . " from $tableName";
+
+        $query = "select " . implode(', ', $columns) . " from $tableName $where limit 1";
 
 
         $dbResult = $con->query($query);
         $result = $dbResult->fetch_assoc();
-        $this->mapData($result);
+
+        if($result != null){
+            $this->mapData($result);
+
+        }
+
     }
 
-    public function all()
+    public function all($where): array
     {
         $db = new DbConnection();
         $con = $db->connect();
         $tableName = $this->tableName();
         $columns = $this->readColumns();
-        $query = "select " . implode(', ', $columns) . " from $tableName";
+
+        $query = "select " . implode(', ', $columns) . " from $tableName $where ";
 
 
         $dbResult = $con->query($query);
-        return $dbResult->fetch_assoc();
+        $results = $dbResult->fetch_all();
+
+
+        return $results;
+
+
     }
 
 
