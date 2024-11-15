@@ -12,5 +12,6 @@ $app->router->get("/getUser", [UserController::class, 'readUser']);
 $app->router->get("/", [HomeController::class, 'home']);
 $app->router->get("/users", [UserController::class, 'readAll']);
 $app->router->get("/updateUser", [UserController::class, 'updateUser']);
+$app->router->post("/processUpdateUser", [UserController::class, 'processUpdateUser']);
 
 $app->run();

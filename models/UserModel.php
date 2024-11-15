@@ -5,6 +5,7 @@ use app\core\BaseModel;
 class UserModel extends BaseModel
 {
     public int $id;
+
     public string $email;
     public string $first_name;
     public string $last_name;
@@ -20,5 +21,9 @@ class UserModel extends BaseModel
     public function readColumns()
     {
         return ["id","first_name", "last_name", "email"];
+    }
+    public function editColumns()
+    {
+        return ["first_name", "last_name", "email"];
     }
 }

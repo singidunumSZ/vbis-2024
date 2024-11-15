@@ -9,6 +9,8 @@ abstract class BaseModel
 
     abstract public function readColumns();
 
+    abstract public function editColumns();
+
     public function one($where)
     {
         $db = new DbConnection();
@@ -51,7 +53,39 @@ abstract class BaseModel
 
     }
 
-        public function mapData($data){
+
+
+    public function update($where)
+    {
+        $db = new DbConnection();
+        $con = $db->connect();
+        $tableName = $this->tableName();
+        $columns = $this->editColumns();
+        $columnsHelper = array_map(fn($attr) => ":$attr", $columns);
+
+        $commonHelper = [];
+
+        for($i = 0; $i < count($columnsHelper); $i++){
+            $commonHelper[] = "$columns[$i] = $columnsHelper[$i] ";
+        }
+
+
+        $query = "update $tableName set " . implode(', ', $commonHelper) . " $where " ;
+
+        foreach($columns as $attribute){
+            $query = str_replace(":$attribute", is_string($this->{$attribute}) ? '"' . $this->{$attribute} . '"' : '"' . $this->{$attribute},$query);
+        }
+
+
+
+
+        $dbResult = $con->query($query);
+
+
+
+
+        }
+    public function mapData($data){
         if($data != null){
             foreach ($data as $key => $value) {
                 if(property_exists($this, $key)){
@@ -59,5 +93,7 @@ abstract class BaseModel
                 }
             }
         }
-        }
+    }
+
+    //}
 }

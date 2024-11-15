@@ -20,6 +20,10 @@ class ProductModel extends BaseModel
 
     public function readColumns()
     {
-        return ["name", "description", "price"];
+        return ["id","name", "description", "price"];
+    }
+    public function editColumns()
+    {
+        return ["first_name", "last_name", "email"];
     }
 }
