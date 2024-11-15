@@ -38,7 +38,7 @@
             <ul class="navbar-nav navbar-nav-hover ms-auto">
                 <li class="nav-item dropdown dropdown-hover mx-2 ms-lg-6">
                     <a class="nav-link ps-2 d-flex justify-content-between cursor-pointer align-items-center" id="dropdownMenuPages8" data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="material-symbols-rounded opacity-6 me-2 text-md">dashboard</i>
+
                         Pages
                         <img src="../assets/img/down-arrow-white.svg" alt="down-arrow" class="arrow ms-2 d-lg-block d-none">
                         <img src="../assets/img/down-arrow-dark.svg" alt="down-arrow" class="arrow ms-2 d-lg-none d-block">
@@ -98,7 +98,7 @@
                     </a>
                 </li>
                 <li class="nav-item my-auto ms-3 ms-lg-0">
-                    <a href="https://www.creative-tim.com/product/material-kit-pro" class="btn btn-sm  bg-white  mb-0 me-1 mt-2 mt-md-0">Upgrade to Pro</a>
+
                 </li>
             </ul>
         </div>
@@ -115,13 +115,8 @@
                     <h1 class="text-white"> {{ RENDER_SECTION }}</h1>
 
                     <button type="submit" class="btn bg-white text-dark">Create Account</button>
-                    <h6 class="text-white mb-2 mt-5">Find us on</h6>
-                    <div class="d-flex justify-content-center">
-                        <a href="javascript:;"><i class="fab fa-facebook text-lg text-white me-4"></i></a>
-                        <a href="javascript:;"><i class="fab fa-instagram text-lg text-white me-4"></i></a>
-                        <a href="javascript:;"><i class="fab fa-twitter text-lg text-white me-4"></i></a>
-                        <a href="javascript:;"><i class="fab fa-google-plus text-lg text-white"></i></a>
-                    </div>
+
+
                 </div>
             </div>
         </div>
@@ -197,36 +192,11 @@
     </section>
     <!-- -------- END PRE-FOOTER 1 w/ SUBSCRIBE BUTTON AND IMAGE ------- -->
 </div>
-<footer class="footer pt-5 mt-5">
-    <div class="container">
-        <div class=" row">
-            <div class="col-md-3 mb-4 ms-auto">
-                <div>
-
-                    <h6 class="font-weight-bolder mb-4"></h6>
-                </div>
 
 
 
 
-                        <li class="nav-item">
-                            <a class="nav-link pe-1" href="https://dribbble.com/creativetim" target="_blank">
-                                <i class="fab fa-dribbble text-lg opacity-8"></i>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link pe-1" href="https://github.com/creativetimofficial" target="_blank">
-                                <i class="fab fa-github text-lg opacity-8"></i>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link pe-1" href="https://www.youtube.com/channel/UCVyTG4sCw-rOvB9oHkzZD1w" target="_blank">
-                                <i class="fab fa-youtube text-lg opacity-8"></i>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+
 
 
 
@@ -244,7 +214,7 @@
                     <p class="text-dark my-4 text-sm font-weight-normal">
                         All rights reserved. Copyright © <script>
                             document.write(new Date().getFullYear())
-                        </script> Material Kit by <a href="https://www.creative-tim.com" target="_blank">Creative Tim</a>.
+
                     </p>
                 </div>
             </div>

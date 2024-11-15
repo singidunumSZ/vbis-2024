@@ -30,4 +30,15 @@ class UserController extends BaseController
         $this->view->render('users', 'main', $results);
 
     }
+    public function updateUser()
+    {
+
+        $model = new UserModel();
+        $model->mapData($_GET);
+        $model->one("where id = $model->id");
+
+
+        $this->view->render('updateUser', 'main', $model);
+
+    }
 }
