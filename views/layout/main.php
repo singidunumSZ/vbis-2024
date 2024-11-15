@@ -48,8 +48,8 @@
                             <h6 class="dropdown-header text-dark font-weight-bolder d-flex align-items-center px-1">
                                 Landing Pages
                             </h6>
-                            <a href="../pages/about-us.html" class="dropdown-item border-radius-md">
-                                <span>Shopping cart</span>
+                            <a href="../products" class="dropdown-item border-radius-md">
+                                <span>Products</span>
                             </a>
                             <a href="../users" class="dropdown-item border-radius-md">
                                 <span>Users</span>

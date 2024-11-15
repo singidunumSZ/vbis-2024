@@ -26,4 +26,10 @@ class UserModel extends BaseModel
     {
         return ["first_name", "last_name", "email"];
     }
+
+
+    public function readAllProducts()
+    {
+        return ["id","name", "description", "price"];
+    }
 }

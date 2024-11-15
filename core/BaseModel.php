@@ -11,6 +11,8 @@ abstract class BaseModel
 
     abstract public function editColumns();
 
+    abstract public function readAllProducts();
+
     public function one($where)
     {
         $db = new DbConnection();
