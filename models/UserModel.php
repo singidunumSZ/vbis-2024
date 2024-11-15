@@ -18,6 +18,6 @@ class UserModel extends BaseModel
 
     public function readColumns()
     {
-        return ["first_name", "last_name", "email"];
+        return ["id","first_name", "last_name", "email"];
     }
 }

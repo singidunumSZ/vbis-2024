@@ -28,10 +28,16 @@ use app\models\UserModel;
                     echo "<div class='d-flex flex-column justify-content-center'>";
                     echo "<h6 class='mb-0 text-sm'>$user[first_name] $user[last_name]</h6>";
                     echo " <p class='text-xs text-secondary mb-0'>$user[email]</p>";
+
                     echo "</div>";
+
                     echo "</div>";
+                    echo "<a href='/updateUser?id=$user[id]' target='_blank' class='text-secondary font-weight-bold text-xs' data-toggle='tooltip' data-original-title='Edit user'>
+                      Edit
+                        </a>";
                     echo "</td>";
                     echo "<tr>";
+
 
                 }
 
