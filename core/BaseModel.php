@@ -11,7 +11,7 @@ abstract class BaseModel
 
     abstract public function editColumns();
 
-    abstract public function readAllProducts();
+    abstract public function products();
 
     public function one($where)
     {
@@ -61,6 +61,7 @@ abstract class BaseModel
     {
         $db = new DbConnection();
         $con = $db->connect();
+
         $tableName = $this->tableName();
         $columns = $this->editColumns();
         $columnsHelper = array_map(fn($attr) => ":$attr", $columns);
@@ -68,20 +69,22 @@ abstract class BaseModel
         $commonHelper = [];
 
         for($i = 0; $i < count($columnsHelper); $i++){
-            $commonHelper[] = "$columns[$i] = $columnsHelper[$i] ";
+            $commonHelper[] = "$columns[$i] = $columnsHelper[$i]";
         }
 
 
-        $query = "update $tableName set " . implode(', ', $commonHelper) . " $where " ;
+        $query = "UPDATE $tableName SET " . implode(', ', $commonHelper) . " $where ";
 
+
+
+        //ovo nije dobro
         foreach($columns as $attribute){
-            $query = str_replace(":$attribute", is_string($this->{$attribute}) ? '"' . $this->{$attribute} . '"' : '"' . $this->{$attribute},$query);
+            $query = str_replace(":$attribute", is_string($this->{$attribute}) ? '"' . $this->{$attribute} . '"' : $this->{$attribute}, $query);
         }
 
 
 
-
-        $dbResult = $con->query($query);
+        $con->query($query);
 
 
 

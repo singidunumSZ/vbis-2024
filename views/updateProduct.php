@@ -2,7 +2,7 @@
 /** @var $params UserModel
  */
 
-use app\models\UserModel;
+use app\models\ProductModel;
 ?>
 <div class="card z-index-0 fadeIn3 fadeInBottom">
 
@@ -12,19 +12,19 @@ use app\models\UserModel;
 
     </div>
     <div class="card-body">
-        <form action = "/processUpdateUser" method = "post" class="text-start">
+        <form action = "/processUpdateProduct" method = "post" >
             <input type="hidden" name="id" value="<?php echo $params->id?>"onfocus="focused(this)" onfocusout="defocused(this)">
             <div class="input-group input-group-outline my-3">
                 <label for="example-text-input" class="form-control-label"> Name </label>
-                <input class="form-control" type="text" name = "first_name" value="<?php echo $params->name?>" onfocus="focused(this)" onfocusout="defocused(this)">
+                <input class="form-control" type="text" name = "name" value="<?php echo $params->name?>" onfocus="focused(this)" onfocusout="defocused(this)">
             </div>
             <div class="input-group input-group-outline mb-3">
                 <label for="example-text-input" class="form-control-label"> Description </label>
-                <input class="form-control" type="text" name = "last_name" value="<?php echo $params->description?>" onfocus="focused(this)" onfocusout="defocused(this)">
+                <input class="form-control" type="text" name = "description" value="<?php echo $params->description?>" onfocus="focused(this)" onfocusout="defocused(this)">
             </div>
             <div class="input-group input-group-outline mm-3">
                 <label for="example-text-input" class="form-control-label"> Price </label>
-                <input class="form-control" type="text" name="email" value="<?php echo $params->price?>" onfocus="focused(this)" onfocusout="defocused(this)">
+                <input class="form-control" type="text" name="price" value="<?php echo $params->price?>" onfocus="focused(this)" onfocusout="defocused(this)">
             </div>
 
             <div class="text-center">

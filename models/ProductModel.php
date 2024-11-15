@@ -5,6 +5,7 @@ namespace app\models;
 use app\core\BaseModel;
 use app\core\DbConnection;
 
+
 class ProductModel extends BaseModel
 {
     public int $id;
@@ -25,10 +26,10 @@ class ProductModel extends BaseModel
     }
     public function editColumns()
     {
-        return ["first_name", "last_name", "email"];
+        return ["name", "description", "price"]; //ovo je pogresno, editColumns se koristi za edit operacije
     }
 
-    public function readAllProducts()
+    public function products()
     {
         return ["id","name", "description", "price"];
     }

@@ -4,22 +4,22 @@ namespace app\controllers;
 
 use app\core\BaseController;
 use app\models\ProductModel;
-use app\models\UserModel;
+
 
 class ProductController extends BaseController
 {
-    public function readAllProducts()
+    public function products()
     {
 
         $model = new ProductModel();
 
-        $results = $model->all("");
+        $results = $model->all("");//koristis all metodu ne products iz ProductMOdel
 
 
         $this->view->render('products', 'main', $results);
 
     }
-    public function updateProduct()
+    public function update()
     {
 
         $model = new ProductModel();
@@ -30,13 +30,11 @@ class ProductController extends BaseController
         $this->view->render('updateProduct', 'main', $model);
 
     }
-    public function processUpdateProduct()
+    public function processUpdate()
     {
 
         $model = new ProductModel();
         $model->mapData($_POST);
-
-
 
         $model->update("where id = $model->id");
 

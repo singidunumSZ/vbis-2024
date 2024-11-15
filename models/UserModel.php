@@ -2,6 +2,8 @@
 namespace app\models;
 use app\core\DbConnection;
 use app\core\BaseModel;
+
+
 class UserModel extends BaseModel
 {
     public int $id;
@@ -28,7 +30,7 @@ class UserModel extends BaseModel
     }
 
 
-    public function readAllProducts()
+    public function products()
     {
         return ["id","name", "description", "price"];
     }

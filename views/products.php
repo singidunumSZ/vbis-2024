@@ -3,7 +3,7 @@
 /** @var $params UserModel
  */
 
-use app\models\UserModel;
+use app\models\ProductModel;
 
 ?>
 <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">

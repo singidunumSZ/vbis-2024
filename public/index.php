@@ -14,9 +14,9 @@ $app->router->get("/", [HomeController::class, 'home']);
 $app->router->get("/users", [UserController::class, 'readAll']);
 $app->router->get("/updateUser", [UserController::class, 'updateUser']);
 $app->router->post("/processUpdateUser", [UserController::class, 'processUpdateUser']);
-$app->router->get("/updateProduct", [ProductController::class, 'updateProduct']);
-$app->router->post("/processUpdateProduct", [ProductController::class, 'processUpdateProduct']);
-$app->router->get("/products", [ProductController::class, 'readAllProducts']);
+$app->router->get("/updateProduct", [ProductController::class, 'update']);
+$app->router->post("/processUpdateProduct", [ProductController::class, 'processUpdate']);
+$app->router->get("/products", [ProductController::class, 'products']);
 
 
 $app->run();
