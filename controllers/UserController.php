@@ -52,9 +52,7 @@ class UserController extends BaseController
 
         $model->update("where id = $model->id");
 
-
-
-        $this->view->render('updateUser', 'main', $model);
+        header("location:" . "/users");
 
     }
 }
