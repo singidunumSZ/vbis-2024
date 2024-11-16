@@ -9,9 +9,9 @@ use app\core\DbConnection;
 class ProductModel extends BaseModel
 {
     public int $id;
-    public string $name;
-    public string $description;
-    public int $price;
+    public string $name = '';
+    public string $description = '';
+    public float $price = 0.0;
 
 
 

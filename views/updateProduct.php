@@ -17,14 +17,41 @@ use app\models\ProductModel;
             <div class="input-group input-group-outline my-3">
                 <label for="example-text-input" class="form-control-label"> Name </label>
                 <input class="form-control" type="text" name = "name" value="<?php echo $params->name?>" onfocus="focused(this)" onfocusout="defocused(this)">
+                <?php
+                if($params != null && $params->errors != null){
+                    foreach($params->errors as $attribute=>$error){
+                        if($attribute == 'name'){
+                            echo "<span class='text-danger'>$error[0]</span>";
+                        }
+                    }
+                }
+                ?>
             </div>
             <div class="input-group input-group-outline mb-3">
                 <label for="example-text-input" class="form-control-label"> Description </label>
                 <input class="form-control" type="text" name = "description" value="<?php echo $params->description?>" onfocus="focused(this)" onfocusout="defocused(this)">
+                <?php
+                if($params != null && $params->errors != null){
+                    foreach($params->errors as $attribute=>$error){
+                        if($attribute == 'description'){
+                            echo "<span class='text-danger'>$error[0]</span>";
+                        }
+                    }
+                }
+                ?>
             </div>
             <div class="input-group input-group-outline mm-3">
                 <label for="example-text-input" class="form-control-label"> Price </label>
                 <input class="form-control" type="text" name="price" value="<?php echo $params->price?>" onfocus="focused(this)" onfocusout="defocused(this)">
+                <?php
+                if($params != null && $params->errors != null){
+                    foreach($params->errors as $attribute=>$error){
+                        if($attribute == 'price'){
+                            echo "<span class='text-danger'>$error[0]</span>";
+                        }
+                    }
+                }
+                ?>
             </div>
 
             <div class="text-center">
@@ -45,6 +72,11 @@ use app\models\ProductModel;
         color: pink;
         margin-right: 30px;
 
+    }
+    span{
+        font-size: 10px;
+        margin-top: 10px;
+        margin-block: auto;
     }
 </style>
 

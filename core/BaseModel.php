@@ -132,7 +132,7 @@ abstract class BaseModel
 
             foreach($rules as $rule){
                 if($rule == self::RULE_REQUIRED){
-                    if(!$value){
+                    if(!$value || $value == ""){
                         $this->errors[$attribute][] = "This field is required";
                     }
                 }
