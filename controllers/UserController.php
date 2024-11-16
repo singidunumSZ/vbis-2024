@@ -5,6 +5,7 @@ use app\core\BaseController;
 use app\core\View;
 use app\models\UserModel;
 
+
 use app\core\DbConnection;
 class UserController extends BaseController
 {
@@ -59,8 +60,10 @@ class UserController extends BaseController
     {
 
 
+        $model = new UserModel();
 
-        $this->view->render('createUser', 'main', null);
+
+        $this->view->render('createUser', 'main', $model);
 
     }
 
@@ -70,6 +73,11 @@ class UserController extends BaseController
         $model = new UserModel();
         $model->mapData($_POST);
 
+        $model->validate();
+        if($model->errors){
+            $this->view->render('createUser', 'main', $model);
+            exit;
+        }
 
 
         $model->insert();
