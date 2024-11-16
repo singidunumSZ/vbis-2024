@@ -114,7 +114,7 @@
                 <div class="col-lg-8 text-center mx-auto my-auto">
                     <h1 class="text-white"> {{ RENDER_SECTION }}</h1>
 
-                    <button type="submit" class="btn bg-white text-dark">Create Account</button>
+                    <a class="btn bg-white text-dark" href="/createUser">Create Account</a>
 
 
                 </div>

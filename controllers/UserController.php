@@ -55,4 +55,26 @@ class UserController extends BaseController
         header("location:" . "/users");
 
     }
+    public function createUser()
+    {
+
+
+
+        $this->view->render('createUser', 'main', null);
+
+    }
+
+    public function processCreate()
+    {
+
+        $model = new UserModel();
+        $model->mapData($_POST);
+
+
+
+        $model->insert();
+
+        header("location:" . "/users");
+
+    }
 }

@@ -17,6 +17,9 @@ $app->router->post("/processUpdateUser", [UserController::class, 'processUpdateU
 $app->router->get("/updateProduct", [ProductController::class, 'update']);
 $app->router->post("/processUpdateProduct", [ProductController::class, 'processUpdate']);
 $app->router->get("/products", [ProductController::class, 'products']);
+$app->router->get("/createUser", [UserController::class, 'createUser']);
+$app->router->post("/processCreateUser", [UserController::class, 'processCreate']);
+
 
 
 $app->run();

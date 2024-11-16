@@ -77,19 +77,30 @@ abstract class BaseModel
 
 
 
-        //ovo nije dobro
+
         foreach($columns as $attribute){
             $query = str_replace(":$attribute", is_string($this->{$attribute}) ? '"' . $this->{$attribute} . '"' : $this->{$attribute}, $query);
         }
-
-
-
         $con->query($query);
-
-
-
-
         }
+
+    public function insert()
+    {
+        $db = new DbConnection();
+        $con = $db->connect();
+
+        $tableName = $this->tableName();
+        $columns = $this->editColumns();
+        $columnsHelper = array_map(fn($attr) => ":$attr", $columns);
+
+        $query = "insert into $tableName (" . implode(",", $columns) . ") values (" . implode(",", $columnsHelper) . ")";
+        foreach($columns as $attribute){
+            $query = str_replace(":$attribute", is_string($this->{$attribute}) ? '"' . $this->{$attribute} . '"' : $this->{$attribute}, $query);
+        }
+        $con->query($query);
+    }
+
+
     public function mapData($data){
         if($data != null){
             foreach ($data as $key => $value) {
