@@ -23,10 +23,11 @@ class AuthController extends BaseController
             exit;
         }
 
+        $model->password = password_hash($model->password, PASSWORD_DEFAULT);
 
-      $model->insert();
 
-        //todo add registration logic
+        $model->insert();
+
         $this->view->render('registration','auth', new AuthModel());
     }
 }
