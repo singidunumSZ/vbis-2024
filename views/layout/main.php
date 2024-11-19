@@ -66,6 +66,9 @@
                             <a href="../pages/sign-in.html" class="dropdown-item border-radius-md">
                                 <span>Log in</span>
                             </a>
+                            <a href="/registration" class="dropdown-item border-radius-md">
+                                <span>Registration</span>
+                            </a>
                         </div>
                     </div>
 

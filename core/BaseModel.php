@@ -22,7 +22,7 @@ abstract class BaseModel
 
     abstract public function editColumns();
 
-    abstract public function products();
+
 
     abstract public function validationRules();
 

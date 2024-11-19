@@ -29,10 +29,7 @@ class ProductModel extends BaseModel
         return ["name", "description", "price"]; //ovo je pogresno, editColumns se koristi za edit operacije
     }
 
-    public function products(): array
-    {
-        return ["id","name", "description", "price"];
-    }
+
     public function validationRules(): array{
         return[
             "name" => [self::RULE_REQUIRED],

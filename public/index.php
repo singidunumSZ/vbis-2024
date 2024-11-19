@@ -5,7 +5,10 @@ require_once __DIR__ . "/../vendor/autoload.php";
 use app\controllers\HomeController;
 use app\controllers\ProductController;
 use app\controllers\UserController;
+use app\controllers\AuthController;
+
 use app\core\Application;
+session_start();
 
 $app = new Application();
 
@@ -19,6 +22,10 @@ $app->router->post("/processUpdateProduct", [ProductController::class, 'processU
 $app->router->get("/products", [ProductController::class, 'products']);
 $app->router->get("/createUser", [UserController::class, 'createUser']);
 $app->router->post("/processCreateUser", [UserController::class, 'processCreate']);
+$app->router->get("/registration", [AuthController::class, 'registration']);
+$app->router->post("/processRegistration", [AuthController::class, 'processRegistration']);
+
+
 
 
 
