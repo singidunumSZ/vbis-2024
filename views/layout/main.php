@@ -63,12 +63,7 @@
                             <h6 class="dropdown-header text-dark font-weight-bolder d-flex align-items-center px-1 mt-3">
                                 Account
                             </h6>
-                            <a href="/login" class="dropdown-item border-radius-md">
-                                <span>Log in</span>
-                            </a>
-                            <a href="/registration" class="dropdown-item border-radius-md">
-                                <span>Registration</span>
-                            </a>
+
                         </div>
                     </div>
 
@@ -117,7 +112,7 @@
                 <div class="col-lg-8 text-center mx-auto my-auto">
                     <h1 class="text-white"> {{ RENDER_SECTION }}</h1>
 
-                    <a class="btn bg-white text-dark" href="/createUser">Create Account</a>
+
 
 
                 </div>

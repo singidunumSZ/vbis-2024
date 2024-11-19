@@ -48,6 +48,9 @@ class AuthController extends BaseController
 
 
 public function login(){
+    if(Application::$app->session->get('user')){
+        header("location:" . "/");
+    }
     $this->view->render('login','auth', new AuthModel());
 }
 
