@@ -2,10 +2,12 @@
 
 namespace app\controllers;
 
+use app\core\Application;
 use app\core\BaseController;
 use app\models\AuthModel;
 use app\models\ProductModel;
 use app\models\RoleModel;
+use app\models\SessionUserModel;
 use app\models\UserRoleModel;
 
 
@@ -39,6 +41,8 @@ class AuthController extends BaseController
         $userRoleModel->id_role = $roleModel->id;
         $userRoleModel->insert();
 
+
+
         header("location:" . "/login");
     }
 
@@ -62,7 +66,25 @@ public function processLogIn(){
     $model->one("where email = '$model->email'");
 
     $verifyResult = password_verify($logInPassword, $model->password);
+    if($verifyResult){
+        $sessionUserModel = new SessionUserModel();
+        $sessionUserModel->email = $model->email;
+        $sessionUserModel->getSessionData();
 
+        Application::$app->session->set('user', $sessionUserModel);
+        header("location:" . "/");
+    }
+    $model->password = $logInPassword;
+    $this->view->render('login','auth', $model);
+
+
+
+}
+
+public function processLogout(){
+    Application::$app->session->delete('user');
     header("location:" . "/login");
+
+
 }
 }

@@ -8,6 +8,8 @@ use app\controllers\UserController;
 
 class AuthModel extends BaseModel
 {
+    public int $id;
+
     public string $email = '';
     public string $password = '';
     public function tableName() : string
@@ -17,7 +19,7 @@ class AuthModel extends BaseModel
 
     public function readColumns(): array
     {
-        return [];
+        return ['id','email', 'password'];
     }
 
     public function editColumns(): array

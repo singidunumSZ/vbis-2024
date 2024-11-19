@@ -63,7 +63,7 @@
                             <h6 class="dropdown-header text-dark font-weight-bolder d-flex align-items-center px-1 mt-3">
                                 Account
                             </h6>
-                            <a href="../pages/sign-in.html" class="dropdown-item border-radius-md">
+                            <a href="/login" class="dropdown-item border-radius-md">
                                 <span>Log in</span>
                             </a>
                             <a href="/registration" class="dropdown-item border-radius-md">
@@ -95,9 +95,9 @@
 
 
                 <li class="nav-item ms-lg-auto">
-                    <a class="nav-link nav-link-icon me-2" href="https://github.com/creativetimofficial/soft-ui-design-system" target="_blank">
+                    <a class="nav-link nav-link-icon me-2" href="/processLogout" >
                         <i class="fa fa-github me-1"></i>
-                        <p class="d-inline text-sm z-index-1 font-weight-bold" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Star us on Github">Github</p>
+                        <p class="d-inline text-sm z-index-1 font-weight-bold" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Star us on Github">Log out</p>
                     </a>
                 </li>
                 <li class="nav-item my-auto ms-3 ms-lg-0">

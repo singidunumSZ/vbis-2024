@@ -8,9 +8,10 @@ use app\controllers\UserController;
 use app\controllers\AuthController;
 
 use app\core\Application;
-session_start();
+
 
 $app = new Application();
+
 
 $app->router->get("/getUser", [UserController::class, 'readUser']);
 $app->router->get("/", [HomeController::class, 'home']);
@@ -24,6 +25,11 @@ $app->router->get("/createUser", [UserController::class, 'createUser']);
 $app->router->post("/processCreateUser", [UserController::class, 'processCreate']);
 $app->router->get("/registration", [AuthController::class, 'registration']);
 $app->router->post("/processRegistration", [AuthController::class, 'processRegistration']);
+$app->router->get("/login", [AuthController::class, 'login']);
+$app->router->post("/processLogIn", [AuthController::class, 'processLogIn']);
+$app->router->get("/processLogout", [AuthController::class, 'processLogout']);
+
+
 
 
 
