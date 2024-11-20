@@ -1,6 +1,9 @@
 <?php
 /** @var $params UserModel
  */
+
+use app\models\UserModel;
+
 ?>
 <div class="card z-index-0 fadeIn3 fadeInBottom">
 

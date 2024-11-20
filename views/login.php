@@ -1,8 +1,8 @@
 <?php
-/** @var $params AuthModel
+/** @var $params \app\models\LoginModel
  */
 
-use app\models\AuthModel;
+use app\models\RegModel;
 ?>
 <div>
     <p class=" my-0">Enter your email and password to sign in</p>

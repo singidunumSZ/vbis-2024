@@ -1,5 +1,6 @@
 <?php
 namespace app\controllers;
+use app\core\Application;
 use app\models\ProductModel;
 use app\core\BaseController;
 use app\core\View;
@@ -49,7 +50,12 @@ class UserController extends BaseController
         $model = new UserModel();
         $model->mapData($_POST);
 
+        if($model->errors){
+            Application::$app->session->set('errorNotification', 'Neuspesan update korisnika!');
 
+            $this->view->render('updateUser', 'main', $model);
+            exit;
+        }
 
         $model->update("where id = $model->id");
 
@@ -75,6 +81,8 @@ class UserController extends BaseController
 
         $model->validate();
         if($model->errors){
+            Application::$app->session->set('errorNotification', 'Neuspesno kreiranje korisnika!');
+
             $this->view->render('createUser', 'main', $model);
             exit;
         }

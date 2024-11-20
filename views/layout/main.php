@@ -63,6 +63,9 @@ use app\core\Application;
                             <a href="../users" class="dropdown-item border-radius-md">
                                 <span>Users</span>
                             </a>
+                            <a href="../createUser" class="dropdown-item border-radius-md">
+                                <span>Create new user</span>
+                            </a>
                             <a href="../" class="dropdown-item border-radius-md">
                                 <span>Home</span>
                             </a>

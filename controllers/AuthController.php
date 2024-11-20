@@ -4,7 +4,8 @@ namespace app\controllers;
 
 use app\core\Application;
 use app\core\BaseController;
-use app\models\AuthModel;
+use app\models\RegModel;
+use app\models\LoginModel;
 use app\models\ProductModel;
 use app\models\RoleModel;
 use app\models\SessionUserModel;
@@ -14,11 +15,11 @@ use app\models\UserRoleModel;
 class AuthController extends BaseController
 {
     public function registration(){
-    $this->view->render('registration','auth', new AuthModel());
+    $this->view->render('registration','auth', new RegModel());
 }
 
     public function processRegistration(){
-        $model = new AuthModel();
+        $model = new RegModel();
         $model->mapData($_POST);
         $model->validate();
 
@@ -55,11 +56,11 @@ public function login(){
     if(Application::$app->session->get('user')){
         header("location:" . "/");
     }
-    $this->view->render('login','auth', new AuthModel());
+    $this->view->render('login','auth', new LoginModel());
 }
 
 public function processLogIn(){
-    $model = new AuthModel();
+    $model = new LoginModel();
     $model->mapData($_POST);
     $model->validate();
 

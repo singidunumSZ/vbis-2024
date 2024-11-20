@@ -6,7 +6,7 @@ use app\core\BaseModel;
 use app\controllers\UserController;
 
 
-class AuthModel extends BaseModel
+class LoginModel extends BaseModel
 {
     public int $id;
 

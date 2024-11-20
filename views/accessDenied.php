@@ -1,8 +1,8 @@
 <?php
-/** @var $params AuthModel
+/** @var $params RegModel
  */
 
-use app\models\AuthModel;
+use app\models\RegModel;
 ?>
 <div>
 
