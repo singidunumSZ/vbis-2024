@@ -78,6 +78,7 @@ public function processLogIn(){
         header("location:" . "/");
     }
     $model->password = $logInPassword;
+    Application::$app->session->set('errorNotification', 'Neuspesan pokusaj prijave!');
     $this->view->render('login','auth', $model);
 
 

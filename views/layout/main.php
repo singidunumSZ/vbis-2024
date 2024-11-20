@@ -20,6 +20,11 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
     <!-- CSS Files -->
     <link id="pagestyle" href="../assets/css/material-kit.css?v=3.1.0" rel="stylesheet" />
+    <link rel="stylesheet" href="../assets/js/plugins/toastr/toastr.min.css">
+    <script src="../assets/libs/jquery/dist/jquery.min.js"></script>
+    <script src="../assets/js/plugins/toastr/toastr.min.js"></script>
+    <script src="../assets/js/plugins/toastr/toastr-options.js"></script>
+    <script src="../assets/js/plugins/chartjs.min.js"></script>
 </head>
 
 <body class="about-us bg-gray-100">
@@ -155,7 +160,7 @@
             </div>
             <div class="row justify-content-center text-center">
                 <div class="col-md-3">
-
+                 <script>toastr.success('test poruka')</script>
                 </div>
                 <div class="col-md-3">
 
