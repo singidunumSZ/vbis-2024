@@ -24,6 +24,8 @@ class ProductController extends BaseController
 
         $model = new ProductModel();
         $model->mapData($_GET);
+
+
         $model->one("where id = $model->id");
 
 
@@ -35,10 +37,21 @@ class ProductController extends BaseController
 
         $model = new ProductModel();
         $model->mapData($_POST);
+        $model->validate();
+
+        if($model->errors){
+            $this->view->render('updateProduct', 'main', $model);
+            exit;
+        }
 
         $model->update("where id = $model->id");
 
         header("location:" . "/products");
 
+    }
+
+    public function accessRole(): array
+    {
+        return ['Administrator'];
     }
 }

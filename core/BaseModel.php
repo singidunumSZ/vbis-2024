@@ -2,28 +2,40 @@
 
 namespace app\core;
 
+use mysqli;
+
 abstract class BaseModel
 {
+    public const RULE_EMAIL = "rule_email";
+    public const RULE_REQUIRED = "rule_required";
 
+    public $errors;
+   private DbConnection $db;
+   public mysqli $con;
+   public function __construct(){
+       $this->db = new DbConnection();
+       $this->con = $this->db->connect();
+   }
     abstract public function tableName();
 
     abstract public function readColumns();
 
     abstract public function editColumns();
 
-    abstract public function products();
+
+
+    abstract public function validationRules();
 
     public function one($where)
     {
-        $db = new DbConnection();
-        $con = $db->connect();
+
         $tableName = $this->tableName();
         $columns = $this->readColumns();
 
         $query = "select " . implode(', ', $columns) . " from $tableName $where limit 1";
 
 
-        $dbResult = $con->query($query);
+        $dbResult = $this->con->query($query);
         $result = $dbResult->fetch_assoc();
 
         if($result != null){
@@ -35,15 +47,14 @@ abstract class BaseModel
 
     public function all($where): array
     {
-        $db = new DbConnection();
-        $con = $db->connect();
+
         $tableName = $this->tableName();
         $columns = $this->readColumns();
 
         $query = "select " . implode(', ', $columns) . " from $tableName $where ";
 
 
-        $dbResult = $con->query($query);
+        $dbResult = $this->con->query($query);
 
         $resultArray = [];
         while($result = $dbResult->fetch_assoc()){
@@ -59,8 +70,7 @@ abstract class BaseModel
 
     public function update($where)
     {
-        $db = new DbConnection();
-        $con = $db->connect();
+
 
         $tableName = $this->tableName();
         $columns = $this->editColumns();
@@ -77,19 +87,29 @@ abstract class BaseModel
 
 
 
-        //ovo nije dobro
+
         foreach($columns as $attribute){
             $query = str_replace(":$attribute", is_string($this->{$attribute}) ? '"' . $this->{$attribute} . '"' : $this->{$attribute}, $query);
         }
-
-
-
-        $con->query($query);
-
-
-
-
+        $this->con->query($query);
         }
+
+    public function insert()
+    {
+
+
+        $tableName = $this->tableName();
+        $columns = $this->editColumns();
+        $columnsHelper = array_map(fn($attr) => ":$attr", $columns);
+
+        $query = "insert into $tableName (" . implode(",", $columns) . ") values (" . implode(",", $columnsHelper) . ")";
+        foreach($columns as $attribute){
+            $query = str_replace(":$attribute", is_string($this->{$attribute}) ? '"' . $this->{$attribute} . '"' : $this->{$attribute}, $query);
+        }
+        $this->con->query($query);
+    }
+
+
     public function mapData($data){
         if($data != null){
             foreach ($data as $key => $value) {
@@ -98,6 +118,36 @@ abstract class BaseModel
                 }
             }
         }
+    }
+
+    public function validate(){
+        $allRules = $this->validationRules();
+
+        foreach($allRules as $attribute => $rules){
+            $value = $this->{$attribute};
+           // echo "<pre>";
+            //var_dump($attribute);
+           // var_dump($value);
+           // var_dump($rules);
+
+            foreach($rules as $rule){
+                if($rule == self::RULE_REQUIRED){
+                    if(!$value || $value == ""){
+                        $this->errors[$attribute][] = "This field is required";
+                    }
+                }
+
+                   if($rule == self::RULE_EMAIL){
+                       if(!filter_var($value, FILTER_VALIDATE_EMAIL)){
+                           $this->errors[$attribute][] = "You did not enter a valid email address";
+                       }
+                   }
+            }
+
+        }
+        //echo "<pre>";
+        //var_dump($allRules);
+        //exit;
     }
 
     //}

@@ -48,7 +48,9 @@ use app\models\ProductModel;
                 </tbody>
             </table>
         </div>
-
+       <div>
+           <a class="btn bg-white text-dark" href="/createProduct">Add product</a>
+       </div>
        <style>
             h6{
                 color:pink;

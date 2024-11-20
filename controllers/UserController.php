@@ -5,6 +5,7 @@ use app\core\BaseController;
 use app\core\View;
 use app\models\UserModel;
 
+
 use app\core\DbConnection;
 class UserController extends BaseController
 {
@@ -54,5 +55,39 @@ class UserController extends BaseController
 
         header("location:" . "/users");
 
+    }
+    public function createUser()
+    {
+
+
+        $model = new UserModel();
+
+
+        $this->view->render('createUser', 'main', $model);
+
+    }
+
+    public function processCreate()
+    {
+
+        $model = new UserModel();
+        $model->mapData($_POST);
+
+        $model->validate();
+        if($model->errors){
+            $this->view->render('createUser', 'main', $model);
+            exit;
+        }
+
+
+        $model->insert();
+
+        header("location:" . "/users");
+
+    }
+
+    public function accessRole(): array
+    {
+       return ['Administrator'];
     }
 }

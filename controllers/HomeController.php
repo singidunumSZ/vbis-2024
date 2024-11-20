@@ -14,4 +14,11 @@ class HomeController extends BaseController
 
         $this->view->render('home', 'main', null);
     }
+
+
+        public function accessRole(): array
+    {
+        return [];
+    }
+
 }
