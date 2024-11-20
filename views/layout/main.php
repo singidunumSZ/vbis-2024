@@ -1,3 +1,7 @@
+<?php
+use app\core\Application;
+?>
+
 <!DOCTYPE html>
 <html lang="en" itemscope itemtype="http://schema.org/WebPage">
 
@@ -160,7 +164,11 @@
             </div>
             <div class="row justify-content-center text-center">
                 <div class="col-md-3">
-                 <script>toastr.success('test poruka')</script>
+                    <?php
+                    Application::$app->session->showSuccessNotification();
+                    Application::$app->session->showErrorNotification();
+
+                    ?>
                 </div>
                 <div class="col-md-3">
 

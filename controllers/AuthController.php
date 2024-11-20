@@ -23,6 +23,8 @@ class AuthController extends BaseController
         $model->validate();
 
         if($model->errors){
+            Application::$app->session->set('errorNotification', 'Neuspesna registracija!');
+
             $this->view->render('registration', 'auth', $model);
             exit;
         }
@@ -40,6 +42,8 @@ class AuthController extends BaseController
         $userRoleModel->id_user = $model->id;
         $userRoleModel->id_role = $roleModel->id;
         $userRoleModel->insert();
+        Application::$app->session->set('successNotification', 'Uspesno ste se registrovali!');
+
 
 
 
@@ -74,8 +78,12 @@ public function processLogIn(){
         $sessionUserModel->email = $model->email;
 
 
+
         Application::$app->session->set('user', $sessionUserModel->getSessionData());
+
         header("location:" . "/");
+        Application::$app->session->set('successNotification', 'Uspesno ste se ulogovali!');
+
     }
     $model->password = $logInPassword;
     Application::$app->session->set('errorNotification', 'Neuspesan pokusaj prijave!');

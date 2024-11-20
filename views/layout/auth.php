@@ -1,4 +1,6 @@
-<?php?>
+<?php
+use app\core\Application;
+?>
 <!--
 =========================================================
 * Material Kit 3 - v3.1.0
@@ -19,7 +21,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
   <link rel="icon" type="image/png" href="../assets/img/favicon.png">
-
+    <link rel="stylesheet" href="../assets/js/plugins/toastr/toastr.min.css">
+    <script src="../assets/libs/jquery/dist/jquery.min.js"></script>
+    <script src="../assets/js/plugins/toastr/toastr.min.js"></script>
+    <script src="../assets/js/plugins/toastr/toastr-options.js"></script>
+    <script src="../assets/js/plugins/chartjs.min.js"></script>
   <!--     Fonts and icons     -->
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700,900" />
   <!-- Nucleo Icons -->
@@ -30,15 +36,21 @@
   <!-- Material Icons -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
   <!-- CSS Files -->
+
   <link id="pagestyle" href="../assets/css/material-kit.css?v=3.1.0" rel="stylesheet" />
 </head>
 
 <body class="sign-in-basic">
+<?php
+Application::$app->session->showSuccessNotification();
+Application::$app->session->showErrorNotification();
+
+?>
   <!-- Navbar Transparent -->
   <nav class="navbar navbar-expand-lg position-absolute top-0 z-index-3 w-100 shadow-none my-3  navbar-transparent ">
     <div class="container">
         <?php
-        use app\core\Application;
+
         if(Application::$app->session->get('user')){
             echo '<a class = "navbar-brand  text-white " href ="/processLogout">log out</a> ';
         }
@@ -87,16 +99,7 @@
             </div>
           </div>
         </div>
-      </div>
-    </div>
 
-          </div>
-
-          </div>
-        </div>
-      </div>
-    </footer>
-  </div>
   <!--   Core JS Files   -->
   <script src="../assets/js/core/popper.min.js" type="text/javascript"></script>
   <script src="../assets/js/core/bootstrap.min.js" type="text/javascript"></script>

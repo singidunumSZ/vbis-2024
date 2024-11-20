@@ -9,8 +9,8 @@ class UserModel extends BaseModel
     public int $id;
 
     public string $email = '';
-    public string $first_name = '';
-    public string $last_name = '';
+    public  $first_name = '';
+    public  $last_name = '';
 
 
     public function tableName(): string{
