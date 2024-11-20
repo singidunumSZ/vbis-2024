@@ -90,4 +90,9 @@ public function processLogout(){
 
 
 }
+
+    public function accessRole(): array
+    {
+       return [];
+    }
 }
