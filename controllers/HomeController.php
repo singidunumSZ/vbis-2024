@@ -18,7 +18,7 @@ class HomeController extends BaseController
 
         public function accessRole(): array
     {
-        return [];
+        return ['korisnik'];
     }
 
 }

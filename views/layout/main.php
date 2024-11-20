@@ -57,9 +57,7 @@
                             <a href="../" class="dropdown-item border-radius-md">
                                 <span>Home</span>
                             </a>
-                            <a href="/getUser" class="dropdown-item border-radius-md">
-                                <span>Your account</span>
-                            </a>
+
                             <h6 class="dropdown-header text-dark font-weight-bolder d-flex align-items-center px-1 mt-3">
                                 Account
                             </h6>

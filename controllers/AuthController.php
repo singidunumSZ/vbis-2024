@@ -72,9 +72,9 @@ public function processLogIn(){
     if($verifyResult){
         $sessionUserModel = new SessionUserModel();
         $sessionUserModel->email = $model->email;
-        $sessionUserModel->getSessionData();
 
-        Application::$app->session->set('user', $sessionUserModel);
+
+        Application::$app->session->set('user', $sessionUserModel->getSessionData());
         header("location:" . "/");
     }
     $model->password = $logInPassword;
@@ -90,6 +90,13 @@ public function processLogout(){
 
 
 }
+
+    public function accessDenied(){
+
+        $this->view->render('accessDenied','auth', null);
+
+
+    }
 
     public function accessRole(): array
     {
