@@ -127,34 +127,30 @@ abstract class BaseModel
 
         foreach($allRules as $attribute => $rules){
             $value = $this->{$attribute};
-           // echo "<pre>";
-            //var_dump($attribute);
-           // var_dump($value);
-           // var_dump($rules);
+
 
             foreach($rules as $rule){
                 if($rule == self::RULE_REQUIRED){
                     if(!$value || $value == ""){
-                        $this->errors[$attribute][] = "This field is required";
+                        $this->errors[$attribute][] = "Ovo polje je obavezno!";
                     }
                 }
 
                    if($rule == self::RULE_EMAIL){
                        if(!filter_var($value, FILTER_VALIDATE_EMAIL)){
-                           $this->errors[$attribute][] = "You did not enter a valid email address";
+                           $this->errors[$attribute][] = "Niste uneli validnu e-mail adresu!";
                        }
                    }
                 if($rule == self::RULE_UNIQUE_EMAIL){
                     if($this->checkUniqueEmail($value)){
-                        $this->errors[$attribute][] = "This email already exists";
+                        $this->errors[$attribute][] = "Nalog sa ovim e-mailom vec postoji!";
+
                     }
                 }
             }
 
         }
-        //echo "<pre>";
-        //var_dump($allRules);
-        //exit;
+
     }
     public function checkUniqueEmail($email){
         $query = "select email from users where email = '$email'";

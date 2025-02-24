@@ -9,7 +9,7 @@ use app\models\UserModel;
 
     <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
         <div class="bg-gradient-dark shadow-dark border-radius-lg py-3 pe-1">
-            <h4>Create new user</h4>
+            <h4>Manually add new user </h4>
 
     </div>
     <div class="card-body">

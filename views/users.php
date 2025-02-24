@@ -9,13 +9,13 @@ use app\models\UserModel;
 <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
 
     <div class="bg-gradient-dark shadow-dark border-radius-lg py-3 pe-1">
-        <h4 class="text-white font-weight-bolder text-center mt-2 mb-0">All users</h4>
+        <h4 class="text-white font-weight-bolder text-center mt-2 mb-0">All users </h4>
         <div class="table-responsive p-0">
             <table class="table align-items-center mb-0">
                 <thead>
                 <tr>
                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">User</th>
-                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Company</th>
+
 
                     <th class="text-secondary opacity-7"></th>
                 </tr>

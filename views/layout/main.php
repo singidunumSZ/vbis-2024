@@ -57,8 +57,27 @@ use app\core\Application;
                             <h6 class="dropdown-header text-dark font-weight-bolder d-flex align-items-center px-1">
                                 Landing Pages
                             </h6>
-                            <a href="../products" class="dropdown-item border-radius-md">
+                            <?php
+                            if(Application::$app->session->isInRole('korisnik')){
+                                echo '
+                                <a href="/productsForUsers" class="dropdown-item border-radius-md">
+                                <span>List of products</span>
+                            </a>
+                             <a href="../" class="dropdown-item border-radius-md">
+                                <span>Home</span>
+                            <a href="/myReports" class="dropdown-item border-radius-md">
+                                <span>My reports</span>
+                            </a>
+                            ';
+                            }
+                            if(Application::$app->session->isInRole('administrator')){
+                                echo '
+                               <a href="../products" class="dropdown-item border-radius-md">
                                 <span>Products</span>
+
+                            </a>
+                            <a href="/productsForUsers" class="dropdown-item border-radius-md">
+                                <span>List of products</span>
                             </a>
                             <a href="../users" class="dropdown-item border-radius-md">
                                 <span>Users</span>
@@ -69,10 +88,20 @@ use app\core\Application;
                             <a href="../" class="dropdown-item border-radius-md">
                                 <span>Home</span>
                             </a>
+                          
+                             <a href="/myReports" class="dropdown-item border-radius-md">
+                                <span>My reports</span>
+                            </a>
+                            <a href="/adminReports" class="dropdown-item border-radius-md">
+                                <span>Admin reports</span>
+                            </a>
+                               ';
+                            }
+                            ?>
 
-                            <h6 class="dropdown-header text-dark font-weight-bolder d-flex align-items-center px-1 mt-3">
-                                Account
-                            </h6>
+
+
+
 
                         </div>
                     </div>
@@ -120,45 +149,14 @@ use app\core\Application;
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-8 text-center mx-auto my-auto">
-                    <h1 class="text-white"> {{ RENDER_SECTION }}</h1>
-
-
-
-
+                    <h1 class="text-white">{{ RENDER_SECTION }}</h1>
                 </div>
             </div>
         </div>
     </div>
 </header>
 <!-- -------- END HEADER 7 w/ text and video ------- -->
-<div class="card card-body shadow-xl mx-3 mx-md-4 mt-n6">
 
-        </div>
-    </section>
-    <!-- END Section with four info areas left & one card right with image and waves -->
-    <!-- -------- START Features w/ pattern background & stats & rocket -------- -->
-    <section class="pb-5 position-relative bg-gradient-dark mx-n3">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 text-start mb-5 mt-5">
-                    <h3 class="text-white z-index-1 position-relative"></h3>
-                    <p class="text-white opacity-8 mb-0"></p>
-                </div>
-            </div>
-
-
-            <div class="row mt-4">
-                <div class="col-lg-6 col-12">
-                    <div class="card card-profile mt-4 z-index-2">
-                        <div class="row">
-
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
     <!-- -------- END Features w/ pattern background & stats & rocket -------- -->
     <section class="pt-4 pb-6" id="count-stats">
         <div class="container">
@@ -190,10 +188,7 @@ use app\core\Application;
 
 
 
-                            <div class="input-group input-group-outline">
-                                <label class="form-label">Type here if you have any questions</label>
-                                <input type="text" class="form-control mb-sm-0">
-                            </div>
+
 
 
 

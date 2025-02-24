@@ -8,6 +8,7 @@ use app\models\RegModel;
     <p class=" my-0">Enter your email and password to sign up</p>
 </div>
 <div class="card-body">
+
     <form role="form" method="post" action = "/processRegistration"class="text-start">
         <div class="input-group input-group-outline my-3">
             <label class="form-label">Email</label>

@@ -52,10 +52,15 @@ Application::$app->session->showErrorNotification();
         <?php
 
         if(Application::$app->session->get('user')){
+            echo '
+             <a href="../" class="navbar-brand  text-white ">
+                                <span>Home</span>
+                            </a>
+            ';
             echo '<a class = "navbar-brand  text-white " href ="/processLogout">log out</a> ';
         }
         else{
-            echo '<a class = "navbar-brand  text-white " href ="/registration">sign up</a> ';
+            echo '<a class = "navbar-brand  text-white " href ="/login">sign in</a> ';
         }
         ?>
 
@@ -71,7 +76,7 @@ Application::$app->session->showErrorNotification();
         <div class="col-lg-4 col-md-8 col-12 mx-auto">
 
             <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
-              <div class="bg-gradient-dark shadow-dark border-radius-lg py-3 pe-1">
+
                 <h4 class="text-white font-weight-bolder text-center mt-2 mb-0">  {{ RENDER_SECTION }}  </h4>
                 <div class="row mt-3">
                   <div class="col-2 text-center ms-auto">
