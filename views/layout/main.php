@@ -1,3 +1,7 @@
+<?php
+use app\core\Application;
+?>
+
 <!DOCTYPE html>
 <html lang="en" itemscope itemtype="http://schema.org/WebPage">
 
@@ -20,6 +24,11 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
     <!-- CSS Files -->
     <link id="pagestyle" href="../assets/css/material-kit.css?v=3.1.0" rel="stylesheet" />
+    <link rel="stylesheet" href="../assets/js/plugins/toastr/toastr.min.css">
+    <script src="../assets/libs/jquery/dist/jquery.min.js"></script>
+    <script src="../assets/js/plugins/toastr/toastr.min.js"></script>
+    <script src="../assets/js/plugins/toastr/toastr-options.js"></script>
+    <script src="../assets/js/plugins/chartjs.min.js"></script>
 </head>
 
 <body class="about-us bg-gray-100">
@@ -48,24 +57,52 @@
                             <h6 class="dropdown-header text-dark font-weight-bolder d-flex align-items-center px-1">
                                 Landing Pages
                             </h6>
-                            <a href="../products" class="dropdown-item border-radius-md">
+                            <?php
+                            if(Application::$app->session->isInRole('korisnik')){
+                                echo '
+                                <a href="/productsForUsers" class="dropdown-item border-radius-md">
+                                <span>List of products</span>
+                            </a>
+                             <a href="../" class="dropdown-item border-radius-md">
+                                <span>Home</span>
+                            <a href="/myReports" class="dropdown-item border-radius-md">
+                                <span>My reports</span>
+                            </a>
+                            ';
+                            }
+                            if(Application::$app->session->isInRole('administrator')){
+                                echo '
+                               <a href="../products" class="dropdown-item border-radius-md">
                                 <span>Products</span>
+
+                            </a>
+                            <a href="/productsForUsers" class="dropdown-item border-radius-md">
+                                <span>List of products</span>
                             </a>
                             <a href="../users" class="dropdown-item border-radius-md">
                                 <span>Users</span>
                             </a>
+                            <a href="../createUser" class="dropdown-item border-radius-md">
+                                <span>Create new user</span>
+                            </a>
                             <a href="../" class="dropdown-item border-radius-md">
                                 <span>Home</span>
                             </a>
-                            <a href="/getUser" class="dropdown-item border-radius-md">
-                                <span>Your account</span>
+                          
+                             <a href="/myReports" class="dropdown-item border-radius-md">
+                                <span>My reports</span>
                             </a>
-                            <h6 class="dropdown-header text-dark font-weight-bolder d-flex align-items-center px-1 mt-3">
-                                Account
-                            </h6>
-                            <a href="../pages/sign-in.html" class="dropdown-item border-radius-md">
-                                <span>Log in</span>
+                            <a href="/adminReports" class="dropdown-item border-radius-md">
+                                <span>Admin reports</span>
                             </a>
+                               ';
+                            }
+                            ?>
+
+
+
+
+
                         </div>
                     </div>
 
@@ -92,9 +129,9 @@
 
 
                 <li class="nav-item ms-lg-auto">
-                    <a class="nav-link nav-link-icon me-2" href="https://github.com/creativetimofficial/soft-ui-design-system" target="_blank">
+                    <a class="nav-link nav-link-icon me-2" href="/processLogout" >
                         <i class="fa fa-github me-1"></i>
-                        <p class="d-inline text-sm z-index-1 font-weight-bold" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Star us on Github">Github</p>
+                        <p class="d-inline text-sm z-index-1 font-weight-bold" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Star us on Github">Log out</p>
                     </a>
                 </li>
                 <li class="nav-item my-auto ms-3 ms-lg-0">
@@ -112,45 +149,14 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-8 text-center mx-auto my-auto">
-                    <h1 class="text-white"> {{ RENDER_SECTION }}</h1>
-
-                    <button type="submit" class="btn bg-white text-dark">Create Account</button>
-
-
+                    <h1 class="text-white">{{ RENDER_SECTION }}</h1>
                 </div>
             </div>
         </div>
     </div>
 </header>
 <!-- -------- END HEADER 7 w/ text and video ------- -->
-<div class="card card-body shadow-xl mx-3 mx-md-4 mt-n6">
 
-        </div>
-    </section>
-    <!-- END Section with four info areas left & one card right with image and waves -->
-    <!-- -------- START Features w/ pattern background & stats & rocket -------- -->
-    <section class="pb-5 position-relative bg-gradient-dark mx-n3">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 text-start mb-5 mt-5">
-                    <h3 class="text-white z-index-1 position-relative"></h3>
-                    <p class="text-white opacity-8 mb-0"></p>
-                </div>
-            </div>
-
-
-            <div class="row mt-4">
-                <div class="col-lg-6 col-12">
-                    <div class="card card-profile mt-4 z-index-2">
-                        <div class="row">
-
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
     <!-- -------- END Features w/ pattern background & stats & rocket -------- -->
     <section class="pt-4 pb-6" id="count-stats">
         <div class="container">
@@ -159,7 +165,11 @@
             </div>
             <div class="row justify-content-center text-center">
                 <div class="col-md-3">
+                    <?php
+                    Application::$app->session->showSuccessNotification();
+                    Application::$app->session->showErrorNotification();
 
+                    ?>
                 </div>
                 <div class="col-md-3">
 
@@ -178,10 +188,7 @@
 
 
 
-                            <div class="input-group input-group-outline">
-                                <label class="form-label">Type here if you have any questions</label>
-                                <input type="text" class="form-control mb-sm-0">
-                            </div>
+
 
 
 
